@@ -1,0 +1,28 @@
+{
+    "name": "timephp/urlparser",
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "description": "Little libe to manipulate url params from GET or POST requests",
+    "homepage": "https://github.com/TimePHP-org/TimePHP-UrlParser",
+    "keywords": ["TimePHP", "Framework", "PHP", "MVC"],
+    "minimum-stability": "stable",
+    "readme": "https://github.com/TimePHP-org/TimePHP-UrlParser/blob/master/README.md",
+    "support": {
+        "email": "timephp.org@gmail.com",
+        "docs": "https://timephp-org.github.io/TimePHP-Docs/#/",
+        "issues": "https://github.com/TimePHP-org/TimePHP-UrlParser/issues",
+        "source": "https://github.com/TimePHP-org/TimePHP-UrlParser/releases"
+    },
+    "authors": [
+        {
+            "name": "Robin B",
+            "email": "timephp.org@gmail.com",
+            "role": "developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "TimePHP\\UrlParser\\": "src/"
+        }
+    }
+}
