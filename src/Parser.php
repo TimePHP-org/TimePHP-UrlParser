@@ -113,4 +113,13 @@ class Parser
          }
       }
    }
+
+   /**
+    * Return a value from $_POST for a specifig index
+    *
+    * @return mixed|null
+    */
+   public function post() {
+      
+   }
 }
