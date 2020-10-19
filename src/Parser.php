@@ -109,18 +109,36 @@ class Parser
             elseif(filter_var($_GET[$index], FILTER_VALIDATE_BOOLEAN)) return (bool)$_GET[$index];
             else return $_GET[$index];
          } else {
-            throw new ParserException("Can not find the index $index", 6001);
+            return null;
          }
       }
    }
 
    /**
-    * Return a value from $_POST for a specifig index
+    * Return a value from $_POST for a specific index
     *
     * @return mixed|null
     */
-   public function post() {
-      
-      
+   public function post(string $index = null) {
+
+      if ($index === null) {
+         $list = [];
+         foreach($_POST as $key => $value){
+            if(filter_var($value, FILTER_VALIDATE_INT)) $list[$key] = (int)$value;
+            elseif(filter_var($value, FILTER_VALIDATE_FLOAT)) $list[$key] = (float)$value;
+            elseif(filter_var($value, FILTER_VALIDATE_BOOLEAN)) $list[$key] = (bool)$value;
+            else $list[$key] = $value;
+         }
+         return $list;
+      } else {
+         if(array_key_exists($index, $_POST)) {
+            if(filter_var($_POST[$index], FILTER_VALIDATE_INT)) return (int)$_POST[$index];
+            elseif(filter_var($_POST[$index], FILTER_VALIDATE_FLOAT)) return (float)$_POST[$index];
+            elseif(filter_var($_POST[$index], FILTER_VALIDATE_BOOLEAN)) return (bool)$_POST[$index];
+            else return $_POST[$index];
+         } else {
+            return null;
+         }
+      }
    }
 }
